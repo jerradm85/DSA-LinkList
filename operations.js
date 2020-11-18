@@ -40,7 +40,13 @@ function main() {
     console.log(SLL.findLast(SLL)) // help with this.
 
     // 5.)(reverse)
-    console.log(SLL.reverse(SLL)) // help with reverse function.
+    // console.log(SLL.reverse(SLL)) // help with reverse function.
+    SLL.print()
+    console.log('------------2h------------')
+    console.log(SLL.thirdFromEnd(SLL))
+    console.log('------------2i------------')
+    console.log(SLL.middleOfList(SLL))
+    console.log('------------2j------------')
 }
 
 main();
@@ -51,27 +57,28 @@ main();
 // a linked list. the time complexity of this function is O(n^k) or polynomial
 // time complexity.
 
-// // create a function that takes a list as an argument
-// function WhatDoesThisProgramDo(lst) {
-//     // set value of current to the head of the list
-//     let current = lst.head;
-//     // while the list still has items to look at
-//     while (current !== null) {
-//         // set value of newNode to current(head of list)
-//         let newNode = current;
-//         // while there is a next item in the list...
-//         while (newNode.next !== null) {
-//             // if the value of the newNode is the same as the value of current
-//             if (newNode.next.value === current.value) {
-//                 // set the pointer to the item after next
-//                 newNode.next = newNode.next.next;
-//             }
-//             else {
-//                 // iterate through the newNode while loop
-//                 newNode = newNode.next;
-//             }
-//         }
-//         // iterate through the current while loop
-//         current = current.next;
-//     }
-// }
+// create a function that takes a list as an argument
+function WhatDoesThisProgramDo(lst) {
+    // set value of current to the head of the list
+    let current = lst.head;
+    // while the list still has items to look at
+    while (current !== null) {
+        // set value of newNode to current(head of list)
+        let newNode = current;
+        // while there is a next item in the list...
+        while (newNode.next !== null) {
+            // if the value of the newNode is the same as the value of current
+            if (newNode.next.value === current.value) {
+                // set the pointer to the item after next
+                newNode.next = newNode.next.next;
+            }
+            else {
+                // iterate through the newNode while loop
+                newNode = newNode.next;
+            }
+        }
+        // iterate through the current while loop
+        current = current.next;
+    }
+}
+

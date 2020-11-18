@@ -214,20 +214,52 @@ class LinkedList {
     }
 
     reverse(list) { // help on this one
-        if(!list.head) {
+        if (!list.head) {
             return;
         }
-      
+
         let node = list.head;
-        list.head = new _Node(node.value, null);
-      
-        while (node.next !== null) {
-          node = node.next;
-          list.insertFirst(node.value);
+        let previous = null;
+
+        while (node) {
+            let temp = node.next
+            node.next = previous
+            previous = node
+            node = temp;
         }
-      
+        list.head = previous
         return list;
-      }
+    }
+
+    thirdFromEnd(list) {
+        if (!list.head) {
+            return;
+        }
+
+        let tempNode = list.head
+
+        while (tempNode) {
+            if (tempNode.next.next.next === null) {
+                 return tempNode
+            }
+            tempNode = tempNode.next;
+        }
+    }
+
+    middleOfList(list) {
+        if (!list.head) {
+            return;
+        }
+
+        let slow = list.head
+        let fast = list.head
+        
+        while(fast && fast.next) {
+            fast = fast.next.next
+            slow = slow.next
+        }
+        return slow
+    }
 }
 
 module.exports = { _Node, LinkedList };
